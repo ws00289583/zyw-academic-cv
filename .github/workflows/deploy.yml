@@ -27,7 +27,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.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 }}
+          personal_token: ${{ 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 }}
           external_repository: ws00289583/zheyu.wang.github.io
           publish_dir: ./public
           #   keep_files: true
