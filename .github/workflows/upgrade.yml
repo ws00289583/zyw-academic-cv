@@ -60,7 +60,7 @@ jobs:
 
       - name: Run Upgrade CLI
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAGES_DEPLOY_TOKEN }}
           # Use manual input or default to stable for scheduled runs
           VERSION_TYPE: ${{ inputs.version_type || 'Stable' }}
         run: |
@@ -77,7 +77,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAGES_DEPLOY_TOKEN }}
           commit-message: "chore(deps): upgrade hugoblox modules"
           title: "⬆️ Upgrade HugoBlox Modules"
           body: |
